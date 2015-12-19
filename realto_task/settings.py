@@ -101,3 +101,25 @@ USE_TZ = True
 # https://docs.djangoproject.com/en/1.8/howto/static-files/
 
 STATIC_URL = '/static/'
+
+SMS_TRANSPORTS = {
+    'default': {
+        'BACKEND': 'libsms.backends.sms.SmsTransport',
+        'PARAMS': {
+            'login': 'some_login',
+            'password': 'some_password',
+        }
+    },
+    'dummy': {
+        'BAKEND': 'libsms.backends.dummy.SmsTransport',
+    },
+    'other': {
+        'BAKEND': 'libsms.backends.other.SmsTransport',
+        'PARAMS': {
+            'login': 'some_login',
+            'password': 'some_password',
+            'var1': 'var1',
+            'var2': 'var2',
+        }
+    }
+}
