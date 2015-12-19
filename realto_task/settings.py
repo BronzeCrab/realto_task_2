@@ -111,10 +111,10 @@ SMS_TRANSPORTS = {
         }
     },
     'dummy': {
-        'BAKEND': 'libsms.backends.dummy.SmsTransport',
+        'BACKEND': 'libsms.backends.dummy.SmsTransport',
     },
     'other': {
-        'BAKEND': 'libsms.backends.other.SmsTransport',
+        'BACKEND': 'libsms.backends.other.SmsTransport',
         'PARAMS': {
             'login': 'some_login',
             'password': 'some_password',
