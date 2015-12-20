@@ -6,8 +6,10 @@
 
 -  `sudo apt-get install git`
 пип
+
 -  `wget https://bootstrap.pypa.io/get-pip.py`
 -  `python get-pip.py`
+
 клонируем этот репо
 
 -  `git clone https://github.com/BronzeCrab/realto_task_2.git`
