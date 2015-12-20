@@ -6,10 +6,14 @@
 
 -  `sudo apt-get install git`
 
-остальное сделает deploy.sh
+клонируем этот репо
 
--  ` clone https://github.com/BronzeCrab/realto_task_2.git`
+-  `git clone https://github.com/BronzeCrab/realto_task_2.git`
 
+запускаем deploy.sh
+
+-  `cd realto_task_2`
+-  `./deploy.sh`
 
 
 
