@@ -10,10 +10,12 @@
 
 -  `git clone https://github.com/BronzeCrab/realto_task_2.git`
 
-запускаем deploy.sh
+зависимости
 
 -  `cd realto_task_2`
--  `./deploy.sh`
+-  `pip install -r requirements.txt`
 
+запускаем
+- `python manage.py runserver 0.0.0.0:80`
 
 
