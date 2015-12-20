@@ -121,5 +121,8 @@ SMS_TRANSPORTS = {
             'var1': 'var1',
             'var2': 'var2',
         }
+    },
+    'test_import_error': {
+        'BACKEND': 'libsms.backends.test.SmsTransportTest',
     }
 }
