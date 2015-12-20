@@ -16,6 +16,6 @@
 -  `pip install -r requirements.txt`
 
 запускаем
-- `python manage.py runserver 0.0.0.0:80`
+- `python manage.py runserver`
 
 
