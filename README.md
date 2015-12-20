@@ -6,17 +6,10 @@
 
 -  `sudo apt-get install git`
 
-клонируем этот репо
+остальное сделает deploy.sh
 
--  `git clone https://github.com/BronzeCrab/realto_task_2.git`
+-  ` clone https://github.com/BronzeCrab/realto_task_2.git`
 
-пип
 
--  `wget https://bootstrap.pypa.io/get-pip.py`
--  `python get-pip.py`
-
-зависимости
-
--  `pip install -r requirements.txt'`
 
 
