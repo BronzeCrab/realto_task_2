@@ -5,6 +5,7 @@
 ставим гит
 
 -  `sudo apt-get install git`
+
 пип
 
 -  `wget https://bootstrap.pypa.io/get-pip.py`
