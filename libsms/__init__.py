@@ -9,22 +9,20 @@ class Send(object):
         self.key = key
         try:
             self.backend = settings.SMS_TRANSPORTS[self.key]['BACKEND']
-        except KeyError:
-            print """please check settings: if default
-                     field exists and has all necessary fields"""
+            self.transport = import_string(self.backend)
+        except (KeyError, ImportError):
+            pass
         try:
             self.params = settings.SMS_TRANSPORTS[self.key]['PARAMS']
         except:
             self.params = dict()
 
     def send(self, phone, msg):
-        try:
-            SmsTransport = import_string(self.backend)
-        except ImportError:
-            print 'please, check settings!'
-        else:
-            sms_tr = SmsTransport(phone, msg, **self.params)
+        if hasattr(self, 'transport'):
+            sms_tr = self.transport(phone, msg, **self.params)
             sms_tr.print_phone_msg()
+        else:
+            print 'error'
 
 if settings.SMS_TRANSPORTS:
     sms_transports = dict()
@@ -32,7 +30,6 @@ if settings.SMS_TRANSPORTS:
         if key == 'default':
             sms_transports[key] = import_module('libsms.sms_transport')
         else:
-            send = Send(key)
-            sms_transports[key] = send
+            sms_transports[key] = Send(key)
 else:
     print 'please, check settings'

@@ -1,17 +1,12 @@
 from django.conf import settings
 from django.utils.module_loading import import_string
 
+default_transport = import_string(
+    settings.SMS_TRANSPORTS['default']['BACKEND'])
 
-def send(phone, msg):
-    if settings.SMS_TRANSPORTS:
-        try:
-            SmsTransport = import_string(
-                settings.SMS_TRANSPORTS['default']['BACKEND'])
-            params = settings.SMS_TRANSPORTS['default']['PARAMS']
-        except KeyError:
-            print """please check settings: if default
-                     field exists and has all necessary fields"""
-        sms_tr = SmsTransport(phone, msg, **params)
+default_params = settings.SMS_TRANSPORTS['default']['PARAMS']
+
+
+def send(phone, msg, tr=default_transport, params=default_params):
+        sms_tr = tr(phone, msg, **params)
         sms_tr.print_phone_msg()
-    else:
-        print 'please, check settings'
